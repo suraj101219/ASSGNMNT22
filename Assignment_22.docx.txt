@@ -1,0 +1,134 @@
+﻿1. What is the result of the code, and explain?
+
+
+
+
+>>> X = 'iNeuron'
+>>> def func():
+print(X)
+
+
+
+
+>>> func()
+
+
+ANS:
+iNeuron
+Explanation: Functions are defined using the def keyword. After this keyword comes an identifier name for the function, 
+followed by a pair of parentheses which may enclose some names of variables, and by the final colon that ends the line. 
+Next follows the block of statements that are part of this function.
+
+
+2. What is the result of the code, and explain?
+
+
+
+
+>>> X = 'iNeuron'
+>>> def func():
+X = 'NI!'
+
+
+
+
+>>> func()
+>>> print(X)
+
+ANS:
+iNeuron
+ func() call the X and print iNeuron. X=iNeuron is global
+
+
+
+
+3. What does this code print, and why?
+
+
+
+
+>>> X = 'iNeuron'
+>>> def func():
+X = 'NI'
+print(X)
+
+
+
+
+>>> func()
+>>> print(X)
+ANS:
+iNeuron
+iNeuron
+Two times print funcion so printed.  X=iNeuron is global
+
+
+
+
+
+4. What output does this code produce? Why?
+
+
+
+
+>>> X = 'iNeuron'
+>>> def func():
+global X
+X = 'NI'
+
+
+
+
+>>> func()
+>>> print(X)
+ANS:
+NI
+AS X = 'NI' IS GLOBAL
+
+
+
+
+
+5. What about this code—what’s the output, and why?
+
+
+
+
+>>> X = 'iNeuron'
+>>> def func():
+X = 'NI'
+def nested():
+print(X)
+nested()
+
+
+
+
+>>> func()
+>>> X
+
+ANS:
+'iNeuron'
+It will print the global X bcz nested loop is applied.
+
+
+
+6. How about this code: what is its output in Python 3, and explain?
+
+
+
+
+>>> def func():
+X = 'NI'
+def nested():
+nonlocal X
+X = 'Spam'
+nested()
+print(X)
+
+
+
+
+>>> func()
+ANS:
+SyntaxError: no binding for nonlocal 'X' found
